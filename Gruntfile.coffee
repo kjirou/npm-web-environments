@@ -66,7 +66,7 @@ module.exports = (grunt) ->
       options:
         grep: '<%= grunt.cli.options.grep ? grunt.cli.options.grep : "" %>'
       main:
-        src: ['<%= constants.builded.js.node_test %>']
+        src: ['<%= constants.js.test %>']
 
     replace:
       version:
