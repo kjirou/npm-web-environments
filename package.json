@@ -1,0 +1,35 @@
+{
+  "name": "web-env",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kjirou/npm-web-env"
+  },
+  "description": "A npm package for setting environment variables to use in web-browsers.",
+  "version": "0.0.1",
+  "author": "kjirou",
+  "keywords": [
+    "env",
+    "environments",
+    "config"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-mocha-test": "*",
+    "grunt-notify": "*",
+    "grunt-testem": "*",
+    "grunt-text-replace": "*",
+    "mocha": "*",
+    "expect.js": "*",
+    "sinon": "*"
+  },
+  "main": "web-env.js",
+  "scripts": {
+    "test": "grunt test:node"
+  }
+}
