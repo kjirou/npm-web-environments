@@ -24,12 +24,13 @@
     "grunt-notify": "*",
     "grunt-testem": "*",
     "grunt-text-replace": "*",
+    "requirejs": "*",
     "mocha": "*",
     "expect.js": "*",
     "sinon": "*"
   },
   "main": "web-env.js",
   "scripts": {
-    "test": "grunt test:node"
+    "test": "grunt test"
   }
 }

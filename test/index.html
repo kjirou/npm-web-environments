@@ -6,28 +6,8 @@
 </head>
 <body>
   <div id="mocha"></div>
-  <script>
-    document.write('<scr' + 'ipt src="assets/web-env.js?_cache=' +
-        (new Date()).getTime() + '"></scr' + 'ipt>');
-  </script>
-  <script src="assets/node_modules/mocha/mocha.js"></script>
-  <script src="assets/node_modules/expect.js/expect.js"></script>
-  <script src="assets/node_modules/sinon/pkg/sinon.js"></script>
-  <script src="/testem.js"></script>
-  <script>
-    mocha.setup('bdd');
-  </script>
-  <script>
-    document.write('<scr' + 'ipt src="assets/tests.js?_cache=' +
-        (new Date()).getTime() + '"></scr' + 'ipt>');
-  </script>
-  <script>
-    mocha.checkLeaks();
-    mocha.globals([
-      'navigator',
-      'Testem'
-    ]);
-    mocha.run();
-  </script>
+  <!--<script src="/testem.js"></script>-->
+  <script data-main="assets/main"
+    src="assets/node_modules/requirejs/require.js"></script>
 </body>
 </html>
