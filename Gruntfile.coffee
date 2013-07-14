@@ -22,7 +22,7 @@ module.exports = (grunt) ->
         ]
       builded:
         js:
-          minified: 'web-env.min.js'
+          minified: 'web-environments.min.js'
 
     uglify:
       production:
@@ -88,4 +88,5 @@ module.exports = (grunt) ->
 
   # Aliases
   grunt.registerTask 'test', ['mochaTest:main']
+  grunt.registerTask 'webtest', ['testem:main']
   grunt.registerTask 'default', ['test']
