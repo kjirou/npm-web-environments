@@ -121,7 +121,7 @@
         throw new Error("Invalid formatted data-path=\"" + dataPath + "\".");
       }
     }
-    return parts;
+    return partPaths;
   };
 
 
