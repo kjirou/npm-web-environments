@@ -110,7 +110,7 @@
   };
 
   webenv._parseDataPath = function(dataPath){
-    if (dataPath === "" || dataPath === null) {
+    if (dataPath === "" || dataPath === null || dataPath === undefined) {
       return [];
     }
     var partPaths = dataPath.split(this.DATA_PATH_SEPARATOR);
