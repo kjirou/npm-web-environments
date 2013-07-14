@@ -27,7 +27,7 @@ requirejs([
   mocha.checkLeaks();
 
   requirejs([
-    "tests"
+    "test/tests"
   ], function(){
     mocha.run();
   });
