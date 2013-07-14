@@ -1,8 +1,8 @@
 {
-  "name": "web-env",
+  "name": "web-environments",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kjirou/npm-web-env"
+    "url": "https://github.com/kjirou/npm-web-environments"
   },
   "description": "A npm package for setting environment variables to use in web-browsers.",
   "version": "0.0.1",
@@ -10,7 +10,9 @@
   "keywords": [
     "env",
     "environments",
-    "config"
+    "settings",
+    "config",
+    "web"
   ],
   "dependencies": {
   },
@@ -30,7 +32,7 @@
     "expect.js": "*",
     "sinon": "*"
   },
-  "main": "web-env.js",
+  "main": "web-environments.js",
   "scripts": {
     "test": "grunt test"
   }

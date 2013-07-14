@@ -16,7 +16,7 @@ module.exports = (grunt) ->
     constants:
       js:
         src: '<%= pkg.main %>'
-        node_test_runner: 'node_test_runner.js'
+        mocha_test_runner: 'test/runner.js'
         test: [
           'test/tests.js'
         ]
@@ -29,17 +29,18 @@ module.exports = (grunt) ->
         files:
           '<%= constants.builded.js.minified %>': '<%= constants.js.src %>'
 
-    # @TODO Standardize "src" and "dest"
     testem:
       options:
         launch_in_ci: [
           'PhantomJS'
         ]
+      _src: [
+          'webtest/index.html'
+      ]
+      _dest: 'log/tests.tap'
       main:
-        src: [
-          'test/index.html'
-        ]
-        dest: 'log/tests.tap'
+        src: '<%= testem._src %>'
+        dest: '<%= testem._dest %>'
       xb:
         options: {
           launch_in_ci: [
@@ -49,25 +50,21 @@ module.exports = (grunt) ->
             'Safari'
           ]
         }
-        src: [
-          'test/index.html'
-        ]
-        dest: 'log/tests.tap'
+        src: '<%= testem._src %>'
+        dest: '<%= testem._dest %>'
       travis:
         options: {
           launch_in_ci: [
             'PhantomJS'
           ]
         }
-        src: [
-          'test/index.html'
-        ]
+        src: '<%= testem._src %>'
 
     mochaTest:
       options:
         grep: '<%= grunt.cli.options.grep ? grunt.cli.options.grep : "" %>'
       main:
-        src: ['<%= constants.js.node_test_runner %>']
+        src: ['<%= constants.js.mocha_test_runner %>']
 
     replace:
       version:

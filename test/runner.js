@@ -1,6 +1,6 @@
 // Path settings to sync requirejs.config
 var paths = {
-  "web-environments": "./web-environments"
+  "web-environments": "../web-environments"
 };
 
 
@@ -25,7 +25,7 @@ global.sinon = require("sinon");
 
 
 // Run tests
-require('./test/tests.js');
+require('./tests.js');
 
 
 module.exports = function(){};
