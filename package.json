@@ -25,6 +25,7 @@
     "grunt-testem": "*",
     "grunt-text-replace": "*",
     "requirejs": "*",
+    "amdefine": "*",
     "mocha": "*",
     "expect.js": "*",
     "sinon": "*"
