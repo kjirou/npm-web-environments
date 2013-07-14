@@ -1,13 +1,18 @@
-define([
-  "web-env",
-  "mocha",
-  "expect",
-  "sinon"
+if (typeof module !== "undefined") {
+  require("../node_test_config");
+  var requirejs = require("requirejs");
+  var mocha = require("mocha");
+  var expect = require("expect.js");
+  var sinon = require("sinon");
+}
+
+console.log('Start tests');
+
+
+requirejs([
+  "web-env"
 ], function(
-  WebEnv,
-  mocha,
-  expect,
-  sinon
+  WebEnv
 ){
 
   describe('WebEnv Class ::', function(){
@@ -21,3 +26,6 @@ define([
   });
 
 });
+
+
+console.log('End tests');
