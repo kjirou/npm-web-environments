@@ -1,16 +1,16 @@
 define([
-  "web-env"
+  "web-environments"
 ], function(
-  WebEnv
+  webenv
 ){
 
-  describe('WebEnv Class ::', function(){
-    it('Class definition', function(){
-      expect(WebEnv).to.be.a('function');
+  describe("WebEnv Class ::", function(){
+    it("Class definition", function(){
+      expect(webenv).to.be.a("function");
     });
 
-    it('VERSION', function(){
-      expect(WebEnv.VERSION).to.match(/^\d+\.\d+.\d+(?:\.\d+)?$/);
+    it("VERSION", function(){
+      expect(webenv.VERSION).to.match(/^\d+\.\d+.\d+(?:\.\d+)?$/);
     });
   });
 

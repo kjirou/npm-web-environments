@@ -1,5 +1,4 @@
-// If you want to change some config
-//   when process is running by Testem.
+// If you want to change some config when process is running by Testem.
 //if (typeof Testem !== 'undefined') {
 //  console.log('Run by Testem!');
 //}
@@ -7,19 +6,17 @@
 
 requirejs.config({
 
-  //baseUrl: "./",
-
   shim: {
-    "web-env": {
-      exports: "WebEnv"
+    "web-environments": {
+      exports: "webenv"
     }
   },
 
   paths: {
-    "web-env": "web-env"
+    "web-environments": "web-environments"
   },
 
-  urlArgs: '_uncached=' +  (new Date()).getTime()
+  urlArgs: "_uncached=" +  (new Date()).getTime()
 });
 
 
@@ -28,7 +25,6 @@ requirejs([
 
   mocha.setup("bdd");
   mocha.checkLeaks();
-  //mocha.globals();
 
   requirejs([
     "tests"

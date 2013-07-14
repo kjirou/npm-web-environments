@@ -1,6 +1,6 @@
 // Path settings to sync requirejs.config
 var paths = {
-  "web-env": "./web-env"
+  "web-environments": "./web-environments"
 };
 
 

@@ -91,8 +91,4 @@ module.exports = (grunt) ->
 
   # Aliases
   grunt.registerTask 'test', ['mochaTest:main']
-  grunt.registerTask 'web', ['testem:main']
-  grunt.registerTask 'xb', ['testem:xb']
-  grunt.registerTask 'travis', ['testem:travis']
-  grunt.registerTask 't', ['test']
   grunt.registerTask 'default', ['test']
