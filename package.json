@@ -34,6 +34,6 @@
   },
   "main": "web-environments.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt mochaTest:main"
   }
 }
