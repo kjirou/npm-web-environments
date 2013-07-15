@@ -38,12 +38,20 @@
       dataPath = null;
     }
 
-    var results = this._findDataByPath(this._data, dataPath);
-
-    if (results.parentScope === null) {
+    var upperDataPath = this._goUpDataPath(dataPath);
+    if (upperDataPath === null) {
       this._data = data;
+      return
+    }
+
+    var results = this._findDataByPath(this._data, upperDataPath);
+    var setKey;
+
+    if (this._is("Object", results.scope)) {
+      setKey = this._getLastPartOfDataPath(dataPath);
+      results.scope[setKey] = data;
     } else {
-      results.parentScope[results.scopeKey] = data;
+      throw new Error("Can't set data, dataPath=\"" + dataPath + "\".");
     }
   };
 
@@ -58,7 +66,7 @@
     if (this._is("Object", results.scope)) {
       return this._extend(results.scope, data);
     } else {
-      throw new Error("Can't extand data, dataPath=\"" + dataPath + "\".");
+      throw new Error("Can't extend data, dataPath=\"" + dataPath + "\".");
     }
   };
 
@@ -107,6 +115,24 @@
       parentScope: parentScope,
       scopeKey: currentScopeKey
     };
+  };
+
+  /*
+   * Go up the data-path.
+   *
+   * e.g. "a.b.c" -> return "a.b"
+   *      ""      -> return  null
+   */
+  webenv._goUpDataPath = function(dataPath){
+    var partPaths = this._parseDataPath(dataPath);
+    if (partPaths.length === 0) return null;
+    partPaths.pop();
+    return partPaths.join(this.DATA_PATH_SEPARATOR);
+  };
+
+  webenv._getLastPartOfDataPath = function(dataPath){
+    var partPaths = this._parseDataPath(dataPath);
+    return partPaths[partPaths.length - 1];
   };
 
   webenv._parseDataPath = function(dataPath){
