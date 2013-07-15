@@ -3,7 +3,7 @@
   var webenv = function(){};
 
 
-  webenv.VERSION = "0.0.1";
+  webenv.VERSION = "0.9.0";
 
   webenv.DATA_PATH_SEPARATOR = ".";
 
