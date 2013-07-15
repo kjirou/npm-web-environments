@@ -2,6 +2,7 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-mocha-test'
@@ -77,6 +78,15 @@ module.exports = (grunt) ->
           from: /(['"])0\.0\.0(['"])/
           to: '$10.0.0$2'
         ]
+
+    jshint:
+      files: [
+        '<%= constants.js.src %>'
+        '<%= constants.js.test %>'
+      ]
+      options: {
+        jshintrc: '.jshintrc'
+      }
 
 
   # Commands

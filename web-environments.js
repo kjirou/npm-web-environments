@@ -41,7 +41,7 @@
     var upperDataPath = this._goUpDataPath(dataPath);
     if (upperDataPath === null) {
       this._data = data;
-      return
+      return;
     }
 
     var results = this._findDataByPath(this._data, upperDataPath);
