@@ -5,7 +5,7 @@
 
   webenv.VERSION = "0.0.1";
 
-  webenv.DATA_PATH_SEPARATOR = "."
+  webenv.DATA_PATH_SEPARATOR = ".";
 
 
   webenv._data = {};
