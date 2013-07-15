@@ -1,4 +1,4 @@
-npm-web-environments
+npm-web-environments [![Build Status](https://travis-ci.org/kjirou/npm-web-environments.png)](https://travis-ci.org/kjirou/npm-web-environments)
 ====================
 
 A npm package for setting environment variables to use in web-browsers.
