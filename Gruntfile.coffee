@@ -75,8 +75,8 @@ module.exports = (grunt) ->
         ]
         overwrite: true
         replacements: [
-          from: /(['"])0\.0\.1(['"])/
-          to: '$10.9.0$2'
+          from: /(['"])0\.9\.0(['"])/
+          to: '$10.9.1$2'
         ]
 
     jshint:
