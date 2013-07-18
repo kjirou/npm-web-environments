@@ -37,7 +37,6 @@ $ npm install web-environments
 // If you want to use by node.js
 //var webenv = require("web-environments");
 
-
 // Set environments
 webenv.set({
   env1: 123,
@@ -49,11 +48,9 @@ webenv.set({
   }
 });
 
-
 // Overwrite environments
 webenv.set("env2", "fugafuga");
 webenv.set("env4.y", 22);
-
 
 // Extend environments by object
 webenv.extend({
@@ -61,11 +58,52 @@ webenv.extend({
   env5: "Append value"
 });
 
-
 // Get environments
 console.log(webenv.get("env1"));   // -> 123
-console.log(webenv.get("env4"));   // -> {x: 1, y: 2}
+console.log(webenv.get("env2"));   // -> "hogehoge"
+console.log(webenv.get("env3"));   // -> false
+console.log(webenv.get("env4"));   // -> {x: 1, y: 22}
 console.log(webenv.get("env4.x")); // -> 1
+console.log(webenv.get("env4.y")); // -> 22
+console.log(webenv.get("env5"));   // -> "Append value"
+console.log(webenv.get());         // -> All environments
+```
+
+
+## File Structure Sample
+
+index.html:
+```
+..
+
+<head>
+  <script src="web-environments.js"></script>
+  <script src="base-environments.js"></script>
+  <script src="production-environments.js"></script>
+</head>
+
+..
+```
+
+base-environments.js:
+```
+webenv.set({
+  debug: true,
+  baseUrl: "http://localhost:80",
+  someSetting1: true,
+  someSetting2: false,
+  someSetting3: false
+});
+```
+
+production-environments.js:
+```
+// You can overwrite values optionally.
+webenv.extend({
+  debug: false,
+  baseUrl: "http://your-production-site.com/",
+  someSetting2: true
+});
 ```
 
 
@@ -73,7 +111,7 @@ console.log(webenv.get("env4.x")); // -> 1
 
 - `data-path`
   - This is a path for targeting data that is represented by "." separated string.
-  - e.g. `"a.b.c"` means `{a: {b: c: value}}`.
+  - e.g. `"a.b.c"` means `{a: {b: c: targetValue}}`.
 - `webenv.set(dataPath, data)`
 - `webenv.set(data)`
 - `webenv.extend(dataPath, data)`
@@ -102,7 +140,7 @@ $ npm install
 $ grunt
 ```
 
-### Utls commands
+### Utils commands
 
 - `grunt jshint` validates codes by JSHint.
 - `grunt release` generates JavaScript files for release.
