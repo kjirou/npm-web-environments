@@ -156,7 +156,7 @@
     module.exports = webenv;
   }
   if (typeof define === "function" && typeof define.amd === "object" && define.amd) {
-    define("webenv", function(){
+    define("web-environments", function(){
       return webenv;
     });
   }
