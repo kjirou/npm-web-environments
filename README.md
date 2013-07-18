@@ -90,9 +90,11 @@ base-environments.js:
 webenv.set({
   debug: true,
   baseUrl: "http://localhost:80",
+  getApiUrl: function(){
+    return webenv.get("baseUrl") + "/api";
+  },
   someSetting1: true,
   someSetting2: false,
-  someSetting3: false
 });
 ```
 
