@@ -89,24 +89,25 @@ base-environments.js:
 ```
 webenv.set({
   debug: true,
-  baseUrl: "http://localhost:80",
+  baseUrl: "http://localhost:8000",
   getApiUrl: function(){
     return webenv.get("baseUrl") + "/api";
   },
   someSetting1: true,
-  someSetting2: false,
+  someSetting2: false
 });
 ```
 
 production-environments.js:
 ```
-// You can overwrite values optionally.
 webenv.extend({
   debug: false,
   baseUrl: "http://your-production-site.com/",
   someSetting2: true
 });
 ```
+
+You can overwrite values optionally.
 
 
 ## API Reference
